@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./src/css/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="icon" href="./src/public/favicon.ico"/>
+
+    <title>WeatherLive</title>
+  </head>
+
+  <body>
+    <nav>
+      <img class="logo" src="./src/public/Logo.png" alt="WeatherLive" />
+
+      <div class="search">
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Pesquisar localização..."
+        />
+
+        <button id="searchButton" aria-label="Pesquisar">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </nav>
+    <main class="container">
+      <section>
+        <div class="current-weather">
+          <div class="primary-weather">
+
+            <div class="location">
+              <p>
+                <i class="bi bi-geo-alt"></i>
+                Localização
+              </p>
+
+              <h1 id="location">Cidade, País</h1>
+            </div>
+
+            <div class="temperature">
+              <img
+                id="weatherIcon"
+                src="https://openweathermap.org/img/wn/01d@2x.png"
+                alt="Condição do tempo"
+              />
+
+              <div>
+                <h2 id="temperature">--°C</h2>
+
+                <p id="description">Nenhuma informação</p>
+
+                <div class="feels">
+                  Sensação de
+                  <strong id="feelsLike"> --°C </strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sun">
+            <div class="sun-card">
+              <span>
+                <i class="bi bi-sunrise"></i>
+                Nascer do sol
+              </span>
+
+              <strong id="sunrise"> --:-- </strong>
+            </div>
+
+            <div class="sun-card">
+              <span>
+                <i class="bi bi-sunset"></i>
+                Pôr do sol
+              </span>
+
+              <strong id="sunset"> --:-- </strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="details">
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-droplet"></i>
+              Umidade
+            </div>
+
+            <div class="value" id="humidity">--%</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-speedometer2"></i>
+              Pressão
+            </div>
+
+            <div class="value" id="pressure">-- hPa</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-wind"></i>
+              Vento
+            </div>
+
+            <div class="value" id="windSpeed">-- m/s</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-compass"></i>
+              Direção do vento
+            </div>
+
+            <div class="value" id="windDirection">--°</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-eye"></i>
+              Visibilidade
+            </div>
+
+            <div class="value" id="visibility">-- km</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-sun"></i>
+              Índice UV
+            </div>
+
+            <div class="value" id="uvi">--</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-cloud"></i>
+              Nebulosidade
+            </div>
+
+            <div class="value" id="clouds">--%</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-moisture"></i>
+              Ponto de orvalho
+            </div>
+
+            <div class="value" id="dewPoint">--°C</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-cloud-rain"></i>
+              Chuva
+            </div>
+
+            <div class="value" id="rain">0 mm/h</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-snow"></i>
+              Neve
+            </div>
+
+            <div class="value" id="snow">0 mm/h</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-wind"></i>
+              Rajada
+            </div>
+
+            <div class="value" id="windGust">-- m/s</div>
+          </div>
+
+          <div class="detail">
+            <div class="label">
+              <i class="bi bi-globe2"></i>
+              Fuso horário
+            </div>
+
+            <div class="value" id="timezone">--</div>
+          </div>
+        </div>
+
+        <div class="alerts" id="alerts" style="display: none">
+          <h3>
+            <i class="bi bi-exclamation-triangle"></i>
+            Alertas meteorológicos
+          </h3>
+
+          <p id="alertText"></p>
+        </div>
+
+        <div class="alightCoordinates">
+          <div class="coordinates">
+            <p>
+              <i class="bi bi-geo-alt"></i>
+              Latitude:
+              <span id="latitude"> -- </span>
+            </p>
+
+            <p>
+              <i class="bi bi-geo-alt"></i>
+              Longitude:
+              <span id="longitude"> -- </span>
+            </p>
+          </div>
+
+          <div>
+            <p>
+              <i class="bi bi-clock"></i>
+              Atualizado em:
+              <span id="updatedAt"> -- </span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>
